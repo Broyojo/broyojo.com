@@ -11,8 +11,8 @@ import (
 func main() {
 	fs := http.FileServer(http.Dir("../public"))
 	if len(os.Args) >= 2 {
-		if os.Args[1] == "online" {
-			log.Println("Starting online server")
+		if os.Args[1] == "--prod" {
+			log.Println("Starting production server")
 			log.Fatal(certmagic.HTTPS([]string{"broyojo.com", "www.broyojo.com"}, fs))
 		}
 	}
