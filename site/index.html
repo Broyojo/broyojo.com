@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website for David Andrews, a.k.a Broyojo">
+    <title>David Andrews</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <script>
+        function displayESTTime() {
+            const now = new Date();
+            const estTime = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+
+            let hours = estTime.getHours();
+            const minutes = estTime.getMinutes().toString().padStart(2, '0');
+            const seconds = estTime.getSeconds().toString().padStart(2, '0');
+
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+
+            document.getElementById('estTime').innerText = `My current time is ${hours}:${minutes}:${seconds} ${ampm} EST`;
+        }
+
+        setInterval(displayESTTime, 1000);
+    </script>
+</head>
+<body onload="displayESTTime()">
+    <header>
+        <div style="display: flex; align-items: center;">
+            <h1 style="margin: 0;"><a style="text-decoration: none;" href="/">David Andrews</a></h1>
+            <nav style="margin-left: 10px; margin-top: 10px">
+                <a href="/assets/resume.pdf">Résumé (outdated)</a>,
+                <a href="/blog">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contacts">
+        <ul>
+            <li><strong>email(s)</strong>: <a href="mailto: dha@xoba.com">dha@xoba.com</a> \( \lor \) <a
+                    href="mailto: dandrews47@gatech.edu">dandrews47@gatech.edu</a></li>
+            <li><strong>phone</strong>: <a href="tel:908-723-5723">908-723-5723</a></li>
+            <li><strong>discord</strong>: Broyojo#2667</li>
+            <li><strong>socials</strong>:
+                <a href="https://github.com/Broyojo/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/broyojo42" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://youtube.com/@broyojo" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/broyojo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+            <li id="estTime"></li>
+        </ul>
+    </section>
+
+    <img id="photo" src="assets/photo.jpg" />
+
+    <article>
+        <section id="facts">
+            <h2>Some Quick Facts about Me</h2>
+            <ul>
+                <li>I hope to build AGI</li>
+                <li>I like compilers, computer architecture, LLMs, and agentic systems</li>
+                <li>I enjoy reading AI papers daily</li>
+                <li>My favorite languages are Python, Go, Rust, and C</li>
+                <li>I'm a Technical Minecraft enthusiast</li>
+                <li>I believe that less is more</li>
+                <li>I use Arch btw</li>
+            </ul>
+        </section>
+
+        <section id="timeline">
+            <h2>My (AGI) Timeline</h2>
+            <ul>
+                <li>AGI \( \sim \mathcal{N}(2030,1.37) \)</li>
+                <li>
+                    \( 2023 \leq \) AI SWE Intern @ <a href="https://teraflop.ai" target="_blank">TeraflopAI</a>
+                </li>
+                <li>
+                    \( 2023 \leq \) AI Researcher @ <a href="https://duckai.org" target="_blank">DuckAI</a>
+                </li>
+                <li>
+                    \( 2023 \leq \) CS (Intel + Sys-Arch) Undergrad @ Georgia Tech (4.0 GPA) \( \leq 2026 \)
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Notable Projects</h2>
+            <ul>
+                <li>
+                    <strong>DuckTrack</strong>: Cross-platform, multimodal computer action data collector.
+                    <a href="https://github.com/TheDuckAI/DuckTrack" target="_blank">Github</a>,
+                    <a href="https://duckai.org/blog/ducktrack" target="_blank">Blog post</a>
+                </li>
+                <li>
+                    <strong>AI Photo Album</strong>: Local photo album app that uses Meta's <a
+                        href="https://arxiv.org/abs/2305.05665" target="_blank">Imagebind</a> for accurate semantic
+                    search over
+                    video, audio, and images.
+                    <a href="https://github.com/Broyojo/photo_album" target="_blank">Github</a>.
+                </li>
+                <li>
+                    <strong>RecipeGPT</strong>: GPT-4v based app that gives you recipes that use ingredients found from
+                    the
+                    image of the opened fridge. My submission for AIATL 2024.
+                    <a href="https://github.com/Broyojo/recipegpt" target="_blank">Github</a>.
+                </li>
+                <li>
+                    <strong>Bluebox</strong>: 8-bit computer built from NOT gates.
+                    <a href="https://github.com/Broyojo/bluebox-boards" target="_blank">TUNGBOARD Files</a>,
+                    <a href="https://github.com/Broyojo/bluebox-assembler" target="_blank">Assembler</a>
+                </li>
+                <li>
+                    <strong>Hardware Minesweeper</strong>: Original Microsoft Minesweeper completely built out of logic
+                    gates.
+                    <a href="https://www.youtube.com/watch?v=BwxEGKpONMA" target="_blank">Video</a>
+                </li>
+                <li>
+                    <strong>Hardware Game of Life</strong>: Conway's Game of Life built entirely out of NOT gates. <a
+                        href="https://youtu.be/YfB1EDpD8Cg?si=d-yAz3fFMwCpuwOG" target="_blank">Video</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="colleagues">
+            <h2>Cool People I Work With</h2>
+            <ul>
+                <li><a href="https://x.com/arankomatsuzaki" target="_blank">Aran Komatsuzaki</a></li>
+                <li><a href="https://twitter.com/EnricoShippole" target="_blank">Enrico Shippole</a></li>
+                <li><a href="https://www.linkedin.com/in/tom-sawada-16303220a/" target="_blank">Tom Sawada</a></li>
+                <li><a href="https://twitter.com/jimmycushnie" target="_blank">Jimmy Cushnie</a></li>
+            </ul>
+        </section>
+    </article>
+
+    <footer>
+        © 2024 David Andrews. All rights reserved.
+    </footer>
+</body>
+</html>
