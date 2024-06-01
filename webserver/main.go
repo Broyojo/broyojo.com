@@ -18,11 +18,12 @@ func main() {
 		log.Println("Starting HTTPS server")
 		certmagic.DefaultACME.Agreed = true
 		certmagic.DefaultACME.Email = "dha@xoba.com"
+		log.Println("starting HTTPS server")
 		log.Fatal(certmagic.HTTPS([]string{
 			"www.broyojo.com",
 			"broyojo.com",
-			"www.davidhandrews.com",
-			"davidhandrews.com",
+//			"www.davidhandrews.com",
+//			"davidhandrews.com",
 		}, fs))
 	} else {
 		log.Println("Starting HTTP server on port 8080")
