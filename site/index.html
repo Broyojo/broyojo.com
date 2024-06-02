@@ -37,16 +37,16 @@
 
             let hours = estTime.getHours();
             const minutes = estTime.getMinutes().toString().padStart(2, '0');
-            const seconds = estTime.getSeconds().toString().padStart(2, '0');
 
             const ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12;
             hours = hours ? hours : 12;
 
-            document.getElementById('estTime').innerText = `My current time is ${hours}:${minutes}:${seconds} ${ampm} EST`;
+            document.getElementById('estTime').innerText = `My current time is ${hours}:${minutes} ${ampm} EST`;
         }
 
         setInterval(displayESTTime, 1000);
+        document.getElementById("year").innerHTML = new Date().getFullYear();
     </script>
 </head>
 <body onload="displayESTTime()">
@@ -62,8 +62,7 @@
 
     <section id="contacts">
         <ul>
-            <li><strong>email(s)</strong>: <a href="mailto: dha@xoba.com">dha@xoba.com</a> \( \lor \) <a
-                    href="mailto: dandrews47@gatech.edu">dandrews47@gatech.edu</a></li>
+            <li><strong>email</strong>: <a href="mailto: dha@xoba.com">dha@xoba.com</a></li>
             <li><strong>phone</strong>: <a href="tel:908-723-5723">908-723-5723</a></li>
             <li><strong>discord</strong>: Broyojo#2667</li>
             <li><strong>socials</strong>:
@@ -93,17 +92,25 @@
         </section>
 
         <section id="timeline">
-            <h2>My (AGI) Timeline</h2>
+            <h2>Experience</h2>
             <ul>
-                <li>AGI \( \sim \mathcal{N}(2030,1.37) \)</li>
                 <li>
-                    \( 2023 \leq \) AI SWE Intern @ <a href="https://teraflop.ai" target="_blank">TeraflopAI</a>
+                    AI SWE Intern @ <a href="https://teraflop.ai" target="_blank">TeraflopAI</a>
+                    (<strong>2023 - present</strong>)
                 </li>
                 <li>
-                    \( 2023 \leq \) AI Researcher @ <a href="https://duckai.org" target="_blank">DuckAI</a>
+                    AI Researcher @ <a href="https://duckai.org" target="_blank">DuckAI</a>
+                    (<strong>2023 - present</strong>)
                 </li>
                 <li>
-                    \( 2023 \leq \) CS (Intel + Sys-Arch) Undergrad @ Georgia Tech (4.0 GPA) \( \leq 2026 \)
+                    Junior AI Researcher @ Rialtic <a href="https://www.rialtic.io/" target="_blank"></a>
+                    (<strong>2022 - 2023</strong>)
+                </li>
+                <li>
+                    CS (Intel + Sys-Arch) Undergrad @ Georgia Tech (4.0 GPA) (<strong>2023 - 2026</strong>)
+                </li>
+                <li>
+                    Governor Livingston High School (4.76 GPA) (<strong>2019 - 2023</strong>)
                 </li>
             </ul>
         </section>
@@ -158,7 +165,7 @@
     </article>
 
     <footer>
-        © 2024 David Andrews. All rights reserved.
+        © <span id="year"></span> David Andrews. All rights reserved.
     </footer>
 </body>
 </html>
