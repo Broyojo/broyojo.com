@@ -45,8 +45,15 @@
             document.getElementById('estTime').innerText = `My current time is ${hours}:${minutes} ${ampm} EST`;
         }
 
-        setInterval(displayESTTime, 1000);
-        document.getElementById("year").innerHTML = new Date().getFullYear();
+        function setCurrentYear() {
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setCurrentYear();
+            displayESTTime();
+            setInterval(displayESTTime, 1000);
+        });    
     </script>
 </head>
 <body onload="displayESTTime()">
